@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Imej - Edit Saiz Imej</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: url('bg_web4.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖼️ Editor Imej</h1>
+            <p>Edit saiz imej anda dengan mudah</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <div class="upload-icon">📁</div>
+                    <h3>Pilih Imej</h3>
+                    <p>Klik untuk memilih imej atau seret imej ke sini</p>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                </div>
+            </div>
+        </div>
+
+        <div class="editor-section" id="editorSection" style="display: none;">
+            <div class="image-container">
+                <canvas id="imageCanvas"></canvas>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label for="widthInput">Lebar (px):</label>
+                    <input type="number" id="widthInput" min="1" max="2000">
+                </div>
+                
+                <div class="control-group">
+                    <label for="heightInput">Tinggi (px):</label>
+                    <input type="number" id="heightInput" min="1" max="2000">
+                </div>
+                
+                <div class="control-group">
+                    <label for="aspectRatio">Nisbah Aspek:</label>
+                    <select id="aspectRatio">
+                        <option value="free">Bebas</option>
+                        <option value="1:1">1:1 (Segi Empat Sama)</option>
+                        <option value="16:9">16:9 (Landscape)</option>
+                        <option value="4:3">4:3 (Standard)</option>
+                        <option value="3:4">3:4 (Portrait)</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="qualityInput">Kualiti (%):</label>
+                    <input type="range" id="qualityInput" min="1" max="100" value="90">
+                    <span id="qualityValue">90%</span>
+                </div>
+                
+                <div class="buttons">
+                    <button id="resizeBtn" class="btn btn-primary">Ubah Saiz</button>
+                    <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                    <button id="downloadBtn" class="btn btn-success">Muat Turun</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>📋 Cara Guna:</h3>
+            <ol>
+                <li>Klik pada kawasan upload untuk memilih imej</li>
+                <li>Atau seret imej terus ke kawasan upload</li>
+                <li>Pilih saiz yang dikehendaki</li>
+                <li>Klik "Ubah Saiz" untuk mengaplikasikan perubahan</li>
+                <li>Klik "Muat Turun" untuk menyimpan imej</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
